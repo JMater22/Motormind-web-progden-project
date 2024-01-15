@@ -1,0 +1,295 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog Page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+        <link href="styles.css" rel='stylesheet'>
+        <style>
+            .responsive-image {
+                flex: 0 0 calc(30% - 10px); /* Adjust the width and space between images */
+                position: relative;
+                overflow: hidden;
+                margin-bottom: 20px; 
+                cursor: pointer;
+                height: 400px;
+            }
+            .responsive-image .image-container{
+                flex: 0 0 calc(30% - 10px); /* Adjust the width and space between images */
+                position: relative;
+                overflow: hidden;
+                margin-bottom: 20px; 
+                cursor: pointer;
+                height: 150px;
+            }
+
+            .responsive-image img {
+                object-fit: cover;
+                width: 100%; /* Use 100% width to fill the container */
+                height: 100%; /* Use 100% height to fill the container */
+                transition: transform 0.3s ease;
+            }
+    
+            .responsive-image:hover img {
+                transform: scale(1.1);
+            }
+            .line-caption {
+                width: 40%;
+            }
+
+            .row {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .headline {
+                justify-content: left;
+            }
+
+            main {
+                margin-left: 15%;
+                margin-right: 15%;
+            }
+
+            .sub-title {
+                font-size: 50px;
+                color: black;
+                font-family: 'Bebas Neue';
+                text-align: left;
+                margin-left: 10px;
+                padding-right: 10%;
+                
+            }
+            .main-content {
+                width: 80%; 
+                margin: 0 auto; 
+            }
+            .main-content p{
+            
+                display: block;
+                margin: 1em 10%;
+                
+                font-family: 'Vollkorn', serif;
+            }
+            @media (max-width: 768px) {
+                .sub-caption {
+                    font-size: 20px;
+                }
+                .main-content {
+                width: 100%; 
+                margin: 0 auto; 
+                }
+                .sub-title{
+                    font-size: 20px;
+                }
+            }
+        .sub-caption{
+                color:black;
+        } 
+        .image-session img {
+            object-fit: cover;
+            width: 100%; 
+            height: 100%; 
+            }
+
+        </style>
+    </head>
+    <body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">MOTORMINDS</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link" href="vehicle.html">Vehicles</a>
+                        <a class="nav-link active" href="news_trends.html">News & Trends</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container mt-5">
+            <div class="row justify-content-md-start">
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="News-header">
+                        <div class="latest date-class"></div>
+                        <span class="chapter-line line-caption"></span>
+                        <div class="latest news-index"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                
+                    <div class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</div>
+            
+            </div>
+            <div class="row image-session justify-content-center align-items-center">
+                <div>
+                    <img src="" alt="Image 3" class="img-fluid justify-content-center">
+                </div>
+            </div>
+            <div class="row main-content justify-content-center">
+            
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor elit vitae ligula bibendum ullamcorper. Nullam ultricies, lacus eu facilisis bibendum, urna sapien malesuada ligula, id varius sem metus non quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus fermentum, erat vel aliquam dapibus, metus elit malesuada libero, vitae pellentesque sem elit nec lectus.</p>
+
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+
+                    <p>Praesent vel nisi vitae nisi pellentesque condimentum ut ac ante. Sed vitae accumsan augue. Aliquam non suscipit turpis, at feugiat velit. Etiam tristique, elit eu dignissim tincidunt, dolor libero tincidunt mauris, id lacinia diam odio vel lacus.</p>
+
+                    <p>In hac habitasse platea dictumst. Ut consequat tellus vel augue tincidunt, vitae malesuada velit rhoncus. Curabitur bibendum, risus at commodo pharetra, elit magna luctus urna, eu aliquet ex justo in purus. Integer id urna ac felis imperdiet malesuada.</p>
+
+                    <p>Duis vehicula nulla non velit scelerisque, in mattis massa accumsan. Proin euismod auctor turpis, sit amet vestibulum urna vulputate vel. Vivamus vulputate velit ac lectus suscipit, ut interdum turpis auctor. Nunc vehicula elit non bibendum dapibus. Nullam hendrerit odio quis mi fermentum, ut varius arcu rhoncus.</p>
+            </div>
+            <br>
+            <div class="row related-news">
+                <h1 style="color:black; text-align: start; font-family:Bebas Neue;">RELATED NEWS</h1>
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="responsive-image">
+                        <div class="image-container">
+                            <img src="" alt="Image 1" class="img-fluid">
+                        </div>
+                        <div class="text-container">
+                            <div class="latest date-class"></div>
+                            <span class="chapter-line line-caption"></span>
+                            <div class="latest news-index"></div>
+                            <p class="sub-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="responsive-image">
+                        <div class="image-container">
+                            <img src="" alt="Image 2" class="img img-fluid">
+                        </div>
+                        <div class="text-container">
+                            <div class="latest date-class"></div>
+                            <span class="chapter-line line-caption"></span>
+                            <div class="latest news-index"></div>
+                            <p class="sub-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="responsive-image">
+                        <div class="image-container">
+                            <img src="" alt="Image 3" class="img-fluid">
+                        </div>
+                        <div class="text-container">
+                            <div class="latest date-class"></div>
+                            <span class="chapter-line line-caption"></span>
+                            <div class="latest news-index"></div>
+                            <p class="sub-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark">
+        <div class="container-fluid text-center bg-dark py-3 footer">
+            <p>&copy; 2023 MotorMinds. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="NewsHandler.js"></script>
+    <script>
+        const newsHandler = new NewsHandler();
+        const relatedDatesString = sessionStorage.getItem('relatedNews_date');
+        const relatedImagesString = sessionStorage.getItem('relatedNews_image');
+
+        
+        const relatedDates = JSON.parse(relatedDatesString);
+        const relatedImages = JSON.parse(relatedImagesString);
+        
+        console.log(relatedImages[1]);
+        const relatedNewsIndex = sessionStorage.getItem('related_news');
+        const parsed_rni = JSON.parse(relatedNewsIndex);
+        const integer_rni = [];
+
+        for (let i = 0; i < parsed_rni.length; i++) {
+            // Using parseInt to convert each string to an integer
+            const intValue = parseInt(parsed_rni[i], 10);
+            integer_rni.push(intValue);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function () {
+        const imageSession = document.querySelector('.image-session img');
+        const dateElement = document.querySelector('.date-class');
+        const newsIndexElement = document.querySelector('.news-index');
+        
+        
+        const storedImageSource = sessionStorage.getItem('image_link'); 
+        const index_of_all = newsHandler.images.indexOf(storedImageSource);   
+        const storedDate = sessionStorage.getItem('date');
+        const storedNewsIndex = sessionStorage.getItem('number');
+
+        // Check if the storedImageSource exists and is not null
+        if (storedImageSource && storedDate && storedNewsIndex) {
+            // Set the src attribute of the image to the stored image source
+            imageSession.src = storedImageSource;
+            dateElement.textContent = `${storedDate}`;
+            newsIndexElement.textContent = `NEWS ${storedNewsIndex}`;
+
+        }
+        const responsiveImages = document.getElementsByClassName('responsive-image');
+        //getter      
+    for (let i = 0; i < responsiveImages.length; i++) {
+    
+            const rnImage = responsiveImages[i].querySelector('img');
+            const dateClass = responsiveImages[i].querySelector('.date-class');
+            const newsIndex = responsiveImages[i].querySelector('.news-index');
+
+            const storedDate = relatedDates[i];
+            const storedNewsIndex = (newsHandler.images.indexOf(relatedImages[i])+ 1);
+
+            dateClass.textContent = `${storedDate}`;
+            newsIndex.textContent = `NEWS ${storedNewsIndex}`;
+            rnImage.src = relatedImages[i];
+      
+    }
+
+
+                const relatedNewsIndex = [];
+                const dates = [];
+                const images = [];
+                
+            
+        //setter
+        for (let i = 0; i < responsiveImages.length; i++) {
+                responsiveImages[i].addEventListener('click', function (e) {
+                    e.preventDefault();
+                            const imageSource = relatedImages[i];
+                            newsHandler.getNumberForRn(relatedNewsIndex, (index_of_all + i));
+                            newsHandler.setDate(dates, relatedNewsIndex);
+                            newsHandler.setImg(images, relatedNewsIndex);
+                            sessionStorage.setItem('image_link', imageSource);
+                            sessionStorage.setItem('related_newsIndex', JSON.stringify(relatedNewsIndex));
+                            sessionStorage.setItem('relatedNews_date', JSON.stringify(dates));
+                            sessionStorage.setItem('relatedNews_image', JSON.stringify(images));
+                            sessionStorage.setItem('date', newsHandler.dates[i]);
+                            sessionStorage.setItem('image_link', imageSource);
+                            sessionStorage.setItem('number', index_of_all+1);
+                            window.location.href = 'blog.html';
+
+                    });
+                }
+    });
+    </script>
+    </body>
+    </html>

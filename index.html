@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotorMind Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+    <link href = "styles.css" rel = 'stylesheet'>
+    <style>
+  
+    
+      .responsive-image {
+        flex: 0 0 calc(30% - 10px); /* Adjust the width and space between images */
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+  
+      .responsive-image img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+      }
+  
+      .responsive-image:hover img {
+        transform: scale(1.1);
+      }
+      body{
+        background-color:#303030;
+      }
+      .number {
+      display: inline-block;
+      font-size:25px;
+      color:red; 
+      padding-right: 10px; 
+      margin-left:50px;
+      font-family: Bebas Neue;
+    }
+
+  
+    .line-caption{
+      width: 40%;
+    }
+  
+    .view-all-btn {
+    display: inline-block;
+    padding: 5px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+    font-family: Bebas Neue;
+    position:absolute;
+    right:5%;
+    bottom:5%;
+    }
+
+  .view-all-btn:hover {
+    color:red;
+    }
+    .social-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.view-all-div {
+  order: 2;
+  margin-top: 2rem;
+}
+
+@media (max-width: 767.98px) {
+  .view-all-div {
+    bottom:1px;
+  }
+}
+.responsive-image{
+  cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#">MOTORMINDS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link" href="vehicle.html">Vehicles</a>
+                <a class="nav-link" href="news_trends.html">News & Trends</a>
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="video__container">
+            <video autoplay muted loop>
+                <source src="Amped Model 3 [4K].mp4" type="video/mp4">
+            </video>
+            <div class = "content">
+                <h1>WELCOME MOTORMINDS</h1>
+                <p>Your premier destination for automotive enthusiasts. Immerse yourself in a world of detailed car reviews, insightful analyses, and expert insights as we navigate the vast landscape of automobile excellence. From sleek sedans to powerful SUVs and high-performance marvels, MotoMind is your trusted guide to the latest models and timeless classics. Let our passion fuel your curiosity, and join us on a thrilling ride through the exciting realm of cars. Your journey into automotive excellence starts here</p>
+            </div>
+        </div>
+    </section>
+    
+    <main>
+         <div class ="number">1</div>
+        <span class="chapter-line"></span>
+        <div class ="latest">LATEST CARS</div>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="position-relative">
+                  <img src="https://wallpapercave.com/wp/wp5459086.jpg" class="img-thumbnail" alt="...">
+                 </div>
+                <div class="carousel-caption d-none d-md-block">
+                  <a href="#" class = "rounded-button h1">TESLA MODEL 3</a>
+                  <p>Experience the future of driving with the sleek and sustainable Tesla Model 3.</p>
+                </div>
+                <div class="carousel-caption small-caption d-sm-block d-md-none position-absolute top-0 start-50 translate-middle-x">
+                  <a href="#" class = "rounded-button h1">TESLA MODEL 3</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://images.hdqwalls.com/download/nissan-gt-r-nismo-1v-1920x1080.jpg" class="img-thumbnail" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <a href="#" class = "rounded-button h1">NISSAN GTR NISMO</a>
+                  <p>Experience the future of driving with the sleek and sustainable Tesla Model 3.</p>
+                </div>
+                <div class="carousel-caption small-caption d-sm-block d-md-none position-absolute top-0 start-50 translate-middle-x">
+                  <a href="#" class = "rounded-button h1">NISSAN GTR NISMO</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://www.bosshunting.com.au/wp-content/uploads/2021/04/769720.jpeg" class="img-thumbnail" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <a href="#" class = "rounded-button">FERARRI SPF90 STRADALE</a>
+                  <p>Experience the epitome of speed and elegance with the Ferrari SF90 Stradale</p>
+                </div>
+                <div class="carousel-caption small-caption d-sm-block d-md-none position-absolute top-0 start-50 translate-middle-x">
+                  <a href="#" class = "rounded-button h1">FERARRI SPF90 STRADALE</a>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </main> 
+
+    <section id="social">
+      <div class="number">2</div>
+      <span class="chapter-line"></span>
+      <div class="latest">SOCIAL</div>
+      <h1 style="color:white; text-align: center; font-family:Bebas Neue;">LATEST NEWS</h1>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-12 col-md-4 mb-4">
+            <div class="responsive-image">
+              <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/video/202305/whatsapp_image_2023-05-24_at_8.45.40_pm-sixteen_nine.jpeg?VersionId=bF6UJQPtq5KUhGsUi.OHP8j1UmjGouWP" alt="Image 1" class="img-fluid">
+              <div class="latest">2024 JAN 1</div>
+              <span class="chapter-line line-caption"></span>
+              <div class="latest">NEWS 1</div>
+              <p class="sub-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-4">
+            <div class="responsive-image">
+              <img src="https://th.bing.com/th/id/OIP.cKXVh0i1nnM9_tyX_vmOcQHaEK?rs=1&pid=ImgDetMain" alt="Image 2" class="img-fluid">
+              <div class="latest">2023 DEC 28</div>
+              <span class="chapter-line line-caption"></span>
+              <div class="latest">NEWS 2</div>
+              <p class="sub-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-4">
+            <div class="responsive-image">
+              <img src="https://www.carnewshere.com/wp-content/uploads/2021/07/Find-Out-Facts-With-Car-News-1170x650.jpg" alt="Image 3" class="img-fluid">
+              <div class="latest">2023 DEC 29</div>
+              <span class="chapter-line line-caption"></span>
+              <div class="latest">NEWS 3</div>
+              <p class="sub-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="social-section">
+        <div class="view-all-div">
+          <a class="view-all-btn" href="news_trends.html">View All</a>
+        </div>
+      </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        // Use getElementsByClassName to get an array of elements with the specified class
+        const responsiveImages = document.getElementsByClassName('responsive-image');
+
+        // Add click event listener to each element with the class 'responsive-image'
+        for (let i = 0; i < responsiveImages.length; i++) {
+            responsiveImages[i].addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Get the image source from the clicked image
+                const imageSource = this.querySelector('img').src;
+
+                // Store the image source in sessionStorage
+                sessionStorage.setItem('image_link', imageSource);
+                window.location.href = 'blog.html';
+                });
+              }
+            });
+    </script>
+    <footer class="bg-dark">
+        <div class="container-fluid text-center bg-dark py-3 footer">
+            <p>&copy; 2023 MotorMinds. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

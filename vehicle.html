@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+    <link href = "styles.css" rel = 'stylesheet'>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 115vh; 
+            background-color: #303030;
+        }
+        main {
+            flex: 1; /* Allow the main content to take up the remaining space */
+        }
+        .col {
+            max-width: 200px;
+            min-height: 180px;
+            max-height: 210px;
+            margin: 10px;
+            background-color:aliceblue;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #dddddd; 
+            text-decoration: none;
+        }
+        .main_container{
+            margin-top: 30px;
+        }
+        .container_1{
+            margin-top: 15px;
+            max-width: 350px;
+            border-radius: 5px;
+        }
+        .container_2{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .button{
+            background-color: #1C1C1C;
+            color: aliceblue;
+            min-height: 50px;
+        }
+        
+        .button_top{
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px; 
+            text-align: center;
+            color:white;
+        }
+        .button_bot{
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px; 
+        }
+        .image_vehicle{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-top: 15%;
+        }
+        .button-dark {
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 12px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-dark:hover {
+            background-color: rgb(250, 110, 110); 
+        }
+
+        .btn-dark:active {
+            background-color: rgb(200, 80, 80); 
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+        }
+        .hidden{
+            display: none;
+        }
+        .col.hovered {
+        background-color: #add8e6; 
+        }
+
+        .col.clicked {
+        background-color: #6a8ea8; 
+
+        }
+        .button.clicked{
+            background-color: red; 
+        }
+        .button.hovered{
+            background-color: rgb(241, 123, 123);
+        }
+        .sports_car{
+            margin-top: 30%;
+        }
+        .model_3, .ec_4{
+            margin-top: 40%;
+        }
+        
+    </style>
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#">MOTORMINDS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active" href="vehicle.html">Vehicles</a>
+                <a class="nav-link" href="news_trends.html">News & Trends</a>
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header> 
+    <main>
+    <div >
+
+    </div>
+    <div class="container main_container mx-auto">
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="container container_1">
+                <div class="row row-cols-1">
+                    <h1 class=" button_top ">VEHICLES</h1>
+                    <button type="button" class="btn btn-1 button button-dark initial_selected" onclick="showGrid('grid_1')">SUVs</button>
+                    <button type="button" class="btn btn-2 button button-dark btn-dark" onclick="showGrid('grid_2')">SPORTS CARS</button>
+                    <button type="button" class="btn btn-3 button button-dark btn-dark" onclick="showGrid('grid_3')">ELECTRIC CARS</button>
+                    <button type="button" class="btn btn-4 button button-dark btn-dark button_bot" onclick="showGrid('grid_4')">MOTORCYCLES</button>
+                </div>
+            </div>
+            
+           <div class="container container_2 justify-content-center">
+                <div class="row row-cols-1 text-center grid_1">
+                    <div class="col">
+                            <img class="image_vehicle" src="Model_1-removebg-preview.png" alt="car_1">
+                    </div>
+                    <div class="col"> 
+                            <img class="image_vehicle" src="Model_2-removebg-preview.png" alt="car_1">
+                    </div>
+                    <div class="col"> 
+                            <img class="image_vehicle" src="Model_3-removebg-preview.png" alt="car_1">
+                    </div>
+                    <div class="col">
+                            <img class="image_vehicle" src="Model_4-removebg-preview.png" alt="car_1">
+                        
+                    </div>
+                    <div class="col">
+                            <img class="image_vehicle" src="MOdel_5-removebg-preview.png" alt="car_1">
+                    </div>
+                    <div class="col">
+                            <img class="image_vehicle" src="Model_6-removebg-preview.png" alt="car_1">
+                    </div>
+                </div>
+
+
+                <div class="row row-cols-1 text-center grid_2 hidden">
+                    <div class="col">
+                        <img class="image_vehicle sports_car" src="Porsche 718.png" alt="car_1">
+                    </div>
+                    <div class="col">
+                        <img class="image_vehicle sports_car" src="SFP90 Stradale.png" alt="car_1">
+                    </div>
+                    <div class="col">
+                        <img class="image_vehicle sports_car" src="SC_3-removebg-preview.png" alt="car_1">
+                    </div>
+                    <div class="col">
+                        <img class="image_vehicle sports_car" src="SC_4-removebg-preview.png" alt="car_1">
+                    </div>
+                    <div class="col">
+                        <img class="image_vehicle sports_car" src="SC_5-removebg-preview.png" alt="car_1">
+                    </div>
+                    <div class="col">
+                        <img class="image_vehicle sports_car" src="SC_6-removebg-preview.png" alt="car_1">
+                    </div>
+
+                    <div class="col">
+                        <img class="image_vehicle sports_car" src="sc_7-removebg-preview.png" alt="car_1">
+                    </div>
+                    
+                </div>
+
+                <div class="row row-cols-1 text-center grid_3 hidden">
+                    <div class="col">
+                        <img class="image_vehicle model_3" src="Model 3.png" alt="car_1">
+                        
+                    </div>
+                    <div class="col">
+                        <img class="image_vehicle " src="EC_2-removebg-preview.png" alt="car_1">
+                    </div>
+                    <div class="col">
+                        <img class="image_vehicle" src="EC_3-removebg-preview.png" alt="car_1">
+                        
+                    </div>
+                    <div class="col">
+                        <img class="image_vehicle ec_4" src="Porsche 718.png" alt="car_1">
+                       
+                    </div>
+                    <div class="col">
+                        <img class="image_vehicle" src="EC_4-removebg-preview.png" alt="car_1">
+                        
+                    </div>
+                    <div class="col">
+                        <img class="image_vehicle" src="EC_5-removebg-preview.png" alt="car_1">
+                    </div>
+                </div>
+                <div class="row row-cols-1 text-center grid_4 hidden">
+                    <div class="col">
+                        <img class="image_vehicle" src="MB_1-removebg-preview.png" alt="car_1">  
+                    </div>
+                    <div class="col">
+                        <img class="image_vehicle" src="MB_2-removebg-preview.png" alt="car_1">   
+                    </div>
+                    <div class="col">
+                        <img class="image_vehicle" src="MB_3-removebg-preview.png" alt="car_1">  
+                    </div>
+                    <div class="col">
+                        <img class="image_vehicle" src="MB_5-removebg-preview.png" alt="car_1">    
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <script>
+        function updateButtonStyles(selectedButton) {
+                const buttons = document.querySelectorAll('.btn');
+                buttons.forEach((button) => {
+                    if (button === selectedButton) {
+                        button.style.backgroundColor = '#E83939'; 
+                        button.style.color = '#FFFFFF';
+                    } 
+                    else {
+                        button.style.backgroundColor = '#000';  
+                        button.style.color = '#FFFFFF';
+                        }
+                    });
+                }
+                document.querySelectorAll('.btn').forEach((button) => {
+                button.addEventListener('click', function () {
+                    updateButtonStyles(button);
+                });
+                });
+
+                 // Initial button styles
+                updateButtonStyles(document.querySelector('.btn-1'));
+
+        function showGrid(grid) {
+        const allGrids = document.querySelectorAll('.grid_1, .grid_2, .grid_3, .grid_4');
+        allGrids.forEach(g => {
+            g.classList.add('hidden');
+        });
+
+        const selectedGrid = document.querySelector(`.${grid}`);
+        selectedGrid.classList.remove('hidden');
+        const selectedButton = document.querySelector(`.btn-${grid.charAt(grid.length - 1)}`);
+        updateButtonStyles(selectedButton);
+        }
+
+    function handleColInteraction(event) {
+        const col = event.currentTarget;
+
+        if (event.type === 'mouseover') {
+            // Hover event
+            col.classList.add('hovered');
+        } else if (event.type === 'click') {
+            // Click event
+            col.classList.toggle('clicked');
+        } else if (event.type === 'mouseleave') {
+            // Mouse leave event
+            col.classList.remove('hovered');
+            col.classList.remove('clicked');
+        }
+    }
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get all elements with class 'col' inside grid_1, grid_2, grid_3, grid_4
+        const cols = document.querySelectorAll('.grid_1 .col, .grid_2 .col, .grid_3 .col, .grid_4 .col');
+        const buttons = document.querySelectorAll('.btn-1, .btn-2, .btn-3, .btn-4');
+        // Add event listeners for hover, click, and mouseleave
+        cols.forEach((col) => {
+            col.addEventListener('mouseover', handleColInteraction);
+            col.addEventListener('click', handleColInteraction);
+            col.addEventListener('mouseleave', handleColInteraction);
+        });
+    });
+    </script>
+    <footer class="bg-dark">
+        <div class="container-fluid text-center bg-dark py-3 footer">
+            <p>&copy; 2023 MotorMinds. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

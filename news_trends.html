@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News And Trends</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+    <link href="styles.css" rel='stylesheet'>
+    <style>
+        .subtitle_element:hover{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">MOTORMINDS</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link" href="vehicle.html">Vehicles</a>
+                        <a class="nav-link active" href="news_trends.html">News & Trends</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header> 
+    <main>
+        <div class="container"> 
+            <div class="row">
+                <div class="col">
+                    <div class="p-2 d-flex justify-content-between align-items-center">
+                        <h1 class="mb-0">NEWS AND TRENDS</h1>
+                        <div id="search" class="d-flex">    
+                            <input type="text" class="form-control search-bar" placeholder="Search" oninput="searchNews()" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="NewsHandler.js"></script>
+            <script>
+
+                const newsHandler = new NewsHandler();
+                const relatedNewsIndex = [];
+                const dates = [];
+                const images = [];
+                
+                
+                function createNewsCard(imageSrc, title, subtitle, content, i) {
+                    const container = document.createElement('div');
+                    container.classList.add('row', 'search-item', 'mb-3');  // Add 'search-item' class to the card
+                    
+                    const card = document.createElement('div');
+                    card.classList.add('p-3', 'border', 'bg-light', 'rounded');
+                    container.appendChild(card);
+
+                    const innerContainer = document.createElement('div');
+                    innerContainer.classList.add('container');
+                    card.appendChild(innerContainer);
+
+                    const row = document.createElement('div');
+                    row.classList.add('row');
+                    innerContainer.appendChild(row);
+
+                    const imageCol = document.createElement('div');
+                    imageCol.classList.add('col-md-3');
+                    row.appendChild(imageCol);
+
+                    const image = document.createElement('img');
+                    image.src = imageSrc;
+                    image.classList.add('img-fluid');
+                    image.alt = 'Image_1';
+                    image.width = 400;
+                    image.height = 400;
+                    imageCol.appendChild(image);
+
+                    const textCol = document.createElement('div');
+                    textCol.classList.add('col-md-8');
+                    row.appendChild(textCol);
+
+                    const titleElement = document.createElement('h1');
+                    titleElement.textContent = title;
+                    titleElement.style.color = '#E12222';
+                    titleElement.style.fontFamily = 'Noto Serif';
+                    titleElement.style.fontWeight = 545;
+                    textCol.appendChild(titleElement);
+
+                    const subtitleElement = document.createElement('h4');
+                    subtitleElement.textContent = subtitle;
+                    subtitleElement.style.color = '#582964';
+                    subtitleElement.style.fontFamily = 'Noto Serif';
+                    subtitleElement.style.fontWeight = 'Normal';
+                    subtitleElement.classList.add('subtitle_element');
+                    subtitleElement.style.cursor = 'pointer';
+                    subtitleElement.addEventListener('mouseover', function () {
+                    subtitleElement.style.color = lightenColor('#582964', 20); // Adjust the percentage as needed
+                    });
+                    subtitleElement.addEventListener('mouseout', function () {
+                        subtitleElement.style.color = '#582964';
+                    });
+                    subtitleElement.addEventListener('click', function () {
+                        subtitleElement.style.color = darkenColor('#582964', 20); // Adjust the percentage as needed
+                        newsHandler.getNumberForRn(relatedNewsIndex, i);
+                        newsHandler.setDate(dates, relatedNewsIndex);
+                        newsHandler.setImg(images, relatedNewsIndex);
+                        sessionStorage.setItem('related_newsIndex', JSON.stringify(relatedNewsIndex));
+                        sessionStorage.setItem('relatedNews_date', JSON.stringify(dates));
+                        sessionStorage.setItem('relatedNews_image', JSON.stringify(images));
+                        sessionStorage.setItem('date', newsHandler.dates[i]);
+                        sessionStorage.setItem('image_link', imageSrc);
+                        sessionStorage.setItem('number', (i+1));
+                        window.location.href = 'blog.html';
+                    });
+                    textCol.appendChild(subtitleElement);
+
+                    const contentElement = document.createElement('p');
+                    contentElement.textContent = content;
+                    contentElement.style.fontFamily = 'Noto Serif';
+                    contentElement.style.fontWeight = 'Lighter';
+                    textCol.appendChild(contentElement);
+
+                    return container;
+                }
+
+                function lightenColor(color, percent) {
+                    const num = parseInt(color.slice(1), 16);
+                    const amt = Math.round(2.55 * percent);
+                    const R = (num >> 16) + amt;
+                    const G = (num >> 8 & 0x00FF) + amt;
+                    const B = (num & 0x0000FF) + amt;
+                    return `#${(1 << 24 | R << 16 | G << 8 | B).toString(16).slice(1)}`;
+                }
+                function darkenColor(color, percent) {
+                    const num = parseInt(color.slice(1), 16);
+                    const amt = Math.round(2.55 * percent);
+                    const R = (num >> 16) - amt < 0 ? 0 : (num >> 16) - amt;
+                    const G = (num >> 8 & 0x00FF) - amt < 0 ? 0 : (num >> 8 & 0x00FF) - amt;
+                    const B = (num & 0x0000FF) - amt < 0 ? 0 : (num & 0x0000FF) - amt;
+                    return `#${(1 << 24 | R << 16 | G << 8 | B).toString(16).slice(1)}`;
+                }
+                function appendNewsCardToMain(imageSrc, title, subtitle, content, i) {
+                    const mainContainer = document.querySelector('main .container');
+
+                    const row = createNewsCard(imageSrc, title, subtitle, content, i);
+                    mainContainer.appendChild(row);
+                }
+                
+
+                const mainContainer = document.querySelector('main .container');
+                mainContainer.classList.add('search-container');
+                
+                // Load initial 4 cards
+                
+                var subtitle ='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.';
+                var content = 'Fames ac turpis egestas maecenas pharetra. Vel elit scelerisque mauris pellentesque. Vitae et leo duis ut diam quam. Mauris vitae ultricies leo integer malesuada nunc vel risus commodo';
+                
+                for (var i = 0; i < 20; i++){
+                    appendNewsCardToMain(newsHandler.images[i],"News And Trends " + (i+1), subtitle, content, i);
+                }
+
+                function searchNews() {
+                    const searchTerm = document.querySelector('.search-bar').value.toLowerCase();
+                    const cards = document.querySelectorAll('.search-container .search-item');
+
+                    cards.forEach((card) => {
+                        const title = card.querySelector('h1').textContent.toLowerCase();
+                        const subtitle = card.querySelector('h4').textContent.toLowerCase();
+                        const content = card.querySelector('p').textContent.toLowerCase();
+
+                        if (title.includes(searchTerm) || subtitle.includes(searchTerm) || content.includes(searchTerm)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+                function showNewsCards(startIndex, endIndex) {
+                    const cards = document.querySelectorAll('.search-container .search-item');
+                    cards.forEach((card, index) => {
+                        if (index >= startIndex && index < endIndex) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+                showNewsCards(0,4);
+                function resetSearchInput() {
+                    const searchBox = document.querySelector('.search-bar');
+                    searchBox.value = '';
+                }
+            </script>
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <button type="button" class="btn btn-primary m-1 btn-1">1</button>
+                    <button type="button" class="btn btn-primary m-1 btn-2">2</button>
+                    <button type="button" class="btn btn-primary m-1 btn-3">3</button>
+                    <button type="button" class="btn btn-primary m-1 btn-4">4</button>
+                    <button type="button" class="btn btn-primary m-1 btn-5">5</button>
+                </div>
+            </div>
+            <script>
+
+            function updateButtonStyles(selectedButton) {
+                const buttons = document.querySelectorAll('.btn');
+                buttons.forEach((button) => {
+                    if (button === selectedButton) {
+                        button.style.backgroundColor = '#E83939'; 
+                        button.style.color = '#FFFFFF'; 
+                    } 
+                    else {
+                        button.style.backgroundColor = '#333333'; 
+                        button.style.color = '#FFFFFF'; 
+                        }
+                    });
+                }
+                document.querySelectorAll('.btn').forEach((button) => {
+                button.addEventListener('click', function () {
+                    showNewsCards((parseInt(button.textContent) - 1) * 4, parseInt(button.textContent) * 4);
+                    resetSearchInput();
+                    updateButtonStyles(button);
+                });
+                });
+
+                 // Initial button styles
+                updateButtonStyles(document.querySelector('.btn-1'));
+                 // Button 1 click
+                 document.querySelector('.btn-1').addEventListener('click', function () {
+                    showNewsCards(0, 4);
+                    resetSearchInput();
+                    
+                });
+
+                // Button 2 click
+                document.querySelector('.btn-2').addEventListener('click', function () {
+                    showNewsCards(4, 8);
+                    resetSearchInput();
+                });
+
+                // Button 3 click
+                document.querySelector('.btn-3').addEventListener('click', function () {
+                    showNewsCards(8, 12);
+                    resetSearchInput();
+                });
+
+                // Button 4 click
+                document.querySelector('.btn-4').addEventListener('click', function () {
+                    showNewsCards(12, 16);
+                    resetSearchInput();
+                });
+
+                // Button 5 click
+                document.querySelector('.btn-5').addEventListener('click', function () {
+                    showNewsCards(16, 20);
+                    resetSearchInput();
+                });
+            </script>
+        </div>
+    </main>
+
+    <footer class="bg-dark">
+        <div class="container-fluid text-center bg-dark py-3 footer">
+            <p>&copy; 2023 MotorMinds. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
