@@ -229,7 +229,7 @@
         const storedImageSource = sessionStorage.getItem('image_link'); 
         const index_of_all = newsHandler.images.indexOf(storedImageSource);   
         const storedDate = sessionStorage.getItem('date');
-        const storedNewsIndex = sessionStorage.getItem('number');
+        const storedNewsIndex = (newsHandler.images.indexOf(storedImageSource)+1);
 
         // Check if the storedImageSource exists and is not null
         if (storedImageSource && storedDate && storedNewsIndex) {
