@@ -39,8 +39,8 @@ this.images = [
     "https://th.bing.com/th/id/R.4601a92b9f6cd950394a8ac25aa67c4d?rik=JSu5a2XrJlA41w&riu=http%3a%2f%2fi.infocar.ua%2fimg%2fnews-%2f78489%2ffoto2_004.jpg&ehk=XZsrUWE%2f76LmWvC0x%2fNdinfE38PPDbK2qYByOYpf5GY%3d&risl=&pid=ImgRaw&r=0",
     "https://2.bp.blogspot.com/_pIfFF1ij3Vw/TEDf4W-uV3I/AAAAAAAAAgQ/TKjW1nQA2KQ/s1600/Vehicle+in+the+news.jpg",
     "https://2.bp.blogspot.com/-vU5Dl-Rmv1U/TiRXmq2hT_I/AAAAAAAADSI/DYUkkSLEON8/s1600/News%2BConcept%2BCars%2B%25286%2529.jpg",
-    "https://th.bing.com/th/id/OIF.BQIhPOBYE8QujT2qVFeJCw?rs=1&pid=ImgDetMain",
-    "https://th.bing.com/th?id=OIF.e8O6Ra4NFjCOG9i%2fFgPsDw&rs=1&pid=ImgDetMain",
+    "https://media.wired.com/photos/593108ea78087a50b317346c/16:9/w_2400,c_limit/Trezor-HP.jpg",
+    "https://www.sportyou.es/noticias/wp-content/uploads/2016/01/Zenvo-ST1.jpg",
     "https://www.buildingsofireland.ie/building-images/niah/images/survey_specific/fullsize/30407106_1.jpg",
     "https://cdn.houle.co.uk/images/Property/large/4/2016/6/22/maes-llyn-uchaf-000020031_6872591_IMG_09.jpg"
     ];
